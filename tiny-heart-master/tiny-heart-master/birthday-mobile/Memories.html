@@ -15,6 +15,118 @@
 </head>
 
 <body>
+  <div id="music-banner" class="music-banner loop">
+    <div class="content">
+      <h2>Bé Như ❤</h2>
+      <!-- <p>Bé nhớ nhập đúng thông tin để vào nhé...</p> -->
+      <button class="btnn" onclick="playMusic()" id="playButton">
+        <!-- <span class="icon">▶️</span> -->
+        <span class="text">Bé nhấn vào đây ❤</span>
+      </button>
+    </div>
+  </div>
+  <!-- <audio id="myAudio" src="./music/dungvetrnha.mp3"></audio> -->
+  <audio id="myAudio" class="music" controls  src="./music/nangAmXaDan.mp3#t=9,500" type="audio/mpeg">
+  <script>
+    function playMusic() {
+      const audio = document.getElementById('myAudio');
+      const banner = document.getElementById('music-banner');
+      
+      audio.play();
+      // Thêm hiệu ứng fade out khi ẩn banner
+      banner.style.opacity = '0';
+      banner.style.transition = 'opacity 0.5s ease-out';
+      
+      setTimeout(() => {
+        banner.style.display = 'none';
+      }, 500);
+    }
+    </script>
+  <style>
+  .music-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .content {
+    text-align: center;
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .content h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  .content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #ccc;
+  }
+  
+  .btnn {
+    padding: 15px 40px;
+    font-size: 1.2em;
+    background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .btnn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 107, 107, 0.4);
+  }
+  
+  .icon {
+    font-size: 1.2em;
+  }
+  
+  /* Animation cho nút */
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .btnns {
+    animation: pulse 2s infinite;
+  }
+  </style>
   <style>
     * {
       font-family: "Montserrat", sans-serif !important;
@@ -22,9 +134,6 @@
       font-style: normal;
         }
   </style>
-
-    <audio class="music" controls autoplay>
-        <source src="./music/nangAmXaDan.mp3#t=9,500" type="audio/mpeg">
     
   
       </audio>
@@ -37,24 +146,21 @@
   <div style="z-index:100;" id="dowebok">
       <!--第一屏-->
       <div class="section">
-          <div class="ly-box01">
-            <div class="ly-txt01">
-              <span class="ly-stxt01">Bé ơi...</span>
-              <p class="ly-stxt02">Ôi chớt!</p>
-              <p class="ly-stxt03">Anh quên tên bé mất rồi</p>
-              <p class="ly-stxt04">Anh gọi tạm </p>
-              <p class="ly-stxt05">Tên bé là...</p>
-              <p class= "ly-stxt05">Bé yêu nhé :3</p>
-            </div>
-            <div class="ly-txt02">
-              <p class="ly-stxt06">Bé Như</p>
-              <p class="ly-stxt07">Anh đã chuẩn bị</p>
-              <p class="ly-stxt08">làm món quà nhỏ này </p>
-              <p class="ly-stxt09">Để tặng cho bé</p>
-              <p class="ly-stxt10">Anh mong được bé thích.</p>
-            </div>
-        </div>
+        <div class="ly-box01">
+          <div class="ly-txt01">
+            <span class="ly-stxt01">Như ơi! </span>
+            <p class="ly-stxt02">24/12/2024</p>
+            <p class="ly-stxt03">là ngày...</p>
+            <p class="ly-stxt04">Quốc đặc biệt quốc tế...</p>
+            <p class="ly-stxt05">Anh nhầm rồi hi😚</p>
+          </div>
+          <div class="ly-txt02">
+            <p class="ly-stxt06">là ngày</p>
+            <p class="ly-stxt07">noen phải không bé.</p>
+
+          </div>
       </div>
+    </div>
 
       <!--第二屏-->
 
@@ -63,30 +169,29 @@
           <div class="timepoint11"></div>
           <div class="ly-box11">
               <div class="ly-txt11">
-                  Bé Như ❤
+                  07/06/2006 ❤
               </div>
               <div class="ly-txt12">
-                 Bé lúc cấp 3 đây
+                 Bé vẫn xinh như mỗi ngày
               </div>
               <div class="ly-imgbox11">
-                <img class="ly-img11" src="./img/n8.jpg"> 
+                <img class="ly-img11" src="./img/n14.jpg" style="background-size: contain; object-fit: contain;"> 
               </div>
           </div>
           <div class="ly-triangle11"></div>
 
           <div class="ly-box12">
               <div class="ly-txt13">
-                01/03/2004
+                07/06/2006 ❤
               </div>
               <div class="ly-txt14">
-                 <p>Gửi em!</p>
-			     <p>Anh chúc em nghe nè! </p>
-				 <p>Đầu tiên anh muốn gửi vài lời chúc đến với em
-                </p>
-                <p>Chúc em sống lâu 1000 tuổi,</p>
-				 <p>Chúc em đẹp xinh chứ giờ em xấu quá,</p>
-                 <p>Chúc em trẻ như 18 chớ anh nhìn em tưởng...</p>
-				 <p>Chúc em hạnh phúc nhé:3</p>
+                 <p>Hôm nay là lễ giáng sinh bé ha</p>
+			     <p>Anh chúc cô bé một ngày noen vui vẻ</p>
+				 <p>Và hạnh phúc nha bé</p>
+                <p>Anh muốn nói với bé</p>
+				 <p>Ngoài trời hơi lạnh bé nhớ mặc áo ấm vào nha</p>
+                 <p>Nụ cười của bé làm anh nhớ mãi ấm cả ngày giáng sinh</p>
+				 <!-- <p>Chúc em hạnh phúc nhé:3</p> -->
 				
               </div>
           </div>
@@ -100,44 +205,43 @@
           <div class="timepoint21"></div>
           <div class="ly-box21">
               <div class="ly-txt21">
-                01/03/2004
+                07/06/2006 ❤
               </div>
               <div class="ly-txt22">
-                 <p> Ui daa!</p>
-                 <p> Viết tới khúc này đau lưng quá à,</p>
-                 <p> Wow đeo kính nhìn ngầu dữ ta!</p>
+                 <p>1 chiếc bông</p>
+                 <p>Em là chiếc bông đẹp nhất</p>
                  
               </div>
               <div class="ly-imgbox21">
-                <img class="ly-img21" src="./img/25.jpg">
+                <img class="ly-img21" src="./img/n14.jfif" style="background-size: contain; object-fit: contain;">
               </div>
           </div>
           <div class="ly-triangle21"></div>
 
           <div class="ly-box22">
               <div class="ly-txt23">
-                01/03/2004
+                07/06/2006 ❤
               </div>
               <div class="ly-txt24">
-                  <p> Con gái của ai mà </p>
-                  <p> Ngồi trên giường thôi cũng dễ thương nữa.</p>
+                  <p>Vẫn là 1 chiếc hoa</p>
+                  <p>Bé lúc còn học cấp 3 </p>
               </div>
               <div class="ly-imgbox22">
-                <img class="ly-img22" src="./img/24.jpg">
+                <img class="ly-img22" src="./img/n8.jpg" style="background-size: contain; object-fit: contain;">
               </div>
           </div>
           <div class="ly-triangle22"></div>
 
            <div class="ly-box23">
               <div class="ly-txt25">
-                01/03/2004
+                07/06/2006 ❤
               </div>
               <div class="ly-txt26">
-                  <p> Biết mặc đầm nửa kìa!</p>
-                  <p> đầm đẹp thiệt chứ,cao xíu nữa là đẹp.</p>
+                  <p> Đây là bé còn nhỏ xíu phải hông ha</p>
+                  <p>Bé thật dễ thương</p>
               </div>
               <div class="ly-imgbox23">
-                <img class="ly-img23" src="./img/z4126170139390_34dc960ae01ffe74753f53479b6fd5f9.jpg">
+                <img class="ly-img23" src="./img/n4.jpg" style="background-size: contain; object-fit: contain;">
               </div>
           </div>
           <div class="ly-triangle23"></div>
@@ -150,29 +254,29 @@
           <div class="timepoint31"></div>
           <div class="ly-box31">
               <div class="ly-txt31">
-                01/03/2004
+                07/06/2006 ❤
               </div>
               <div class="ly-txt32">
-                  <p>Xinh như này em xứng đáng 1 anh người iu,</p>
-                  <p>còn anh thì 3 em vẫn được:3</p>
+                  <p>Công túa biết vẽ tanh nữa kìa</p>
+                  <p>Công túa nhớ vẽ về đôi mình nha</p>
               </div>
               <div class="ly-imgbox31">
-                <img class="ly-img31" src="./img/z4126170140316_b610421f7e7d46b79353576ddeb9f9cf.jpg">
+                <img class="ly-img31" src="./img/n6.jpg" style="background-size: contain; object-fit: contain;">
               </div>
           </div>
           <div class="ly-triangle31"></div>
 
           <div class="ly-box32">
               <div class="ly-txt33">
-                01/03/2004
+                07/06/2006 ❤
               </div>
               <div class="ly-txt34">
-                 <p>Mèo dễ thương quá!
-                    dễ thương y chang em.
+                 <p>Bé cứ cười như thế nhé!
+                  Anh muốn được nhìn thấy bé vui
                  </p>
               </div>
               <div class="ly-imgbox31">
-                <img class="ly-img31" src="./img/23.jpg">
+                <img class="ly-img31" src="./img/n7.jpg" style="background-size: contain; object-fit: contain;">
               </div>
           </div>
           <div class="ly-triangle32"></div>
@@ -184,297 +288,50 @@
           <div class="timepoint21"></div>
           <div class="ly-box52">
               <div class="ly-txt21">
-                01/03/2004
+                07/06/2006 ❤
               </div>
               <div class="ly-txt22">
-                 <p>6 điều bác hồ dạy!</p>
-				  <p>Điều thứ 6 là em đọc lại điều 1. </p>
+                <p>Thích từ nụ cười của bé làm tim anh rung động hoài không nghỉ ngơi, hì hì... Anh mong rằng mọi thứ đều làm dịu dàng với bé, cười lên nha bé :3
+                </p>
               </div>
               <div class="ly-imgbox21">
-                <img class="ly-img21" src="./img/z4126170143625_30e3087e9f195dd6ebfb707ba6e50d6a.jpg">
+                <img class="ly-img21" src="./img/n15.jfif">
               </div>
           </div>
           <div class="ly-triangle21"></div>
-
-          <div class="ly-box22">
-              <div class="ly-txt23">
-                01/03/2004
-              </div>
-              <div class="ly-txt51">
-                  <p>Mắt kính đẹp quá😎!</p>
-				          <!-- <p>XXXXXXXXXXXXXX</p> -->
-              </div>
-              <div class="ly-imgbox22">
-                <img class="ly-img22" src="./img/22.jpg">
-              </div>
-          </div>
-          <div class="ly-triangle22"></div>
-
-           <div class="ly-box51">
-              <div class="ly-txt25">
-                01/03/2004
-              </div>
-              <div class="ly-txt26">
-                  <p>Nhìn vậy chớ,nhậu là 123 zô! </p>
-                  <p>Gặp ai cũng ruột, không biết có ruột hay không...</p>
-              </div>
-              <div class="ly-imgbox23">
-                <img class="ly-img23" src="./img/6.jpg">
-              </div>
-          </div>
-          <div class="ly-triangle23"></div>
-      </div>
-
-  <!--第六屏-->
-  <div class="section">
-          <div class="timeline"></div>
-          <div class="timepoint21"></div>
-          <div class="ly-box21">
-              <div class="ly-txt21">
-                  Sắc đẹp
-              </div>
-              <div class="ly-txt22">
-                 <p>Thư Dễ thương</p>
-                 <p>Xinh đẹp</p>
-                 <p>Hiền lành</p>
-                 <p>Tất cả Thư điều không có! </p>
-                 <!-- <p>XXXXXXXXXX</p> -->
-              </div>
-              <div class="ly-imgbox21">
-                <img class="ly-img21" src="./img/21.jpg">
-              </div>
-          </div>
-          <div class="ly-triangle21"></div>
-
-          <div class="ly-box22">
-              <div class="ly-txt23">
-                 Kỉ niệm
-              </div>
-              <div class="ly-txt24">
-                  <p>Nói vậy chứ!
-                    Thời đi học xinh nhỉ,chắc chỉnh banh app.
-                  </p>
-                
-              </div>
-              <div class="ly-imgbox22">
-                <img class="ly-img22" src="./img/20.jpg">
-              </div>
-          </div>
-          <div class="ly-triangle22"></div>
-
-           <div class="ly-box23">
-              <div class="ly-txt25">
-                01/03/2004
-              </div>
-              <div class="ly-txt61">
-                  <p class="wwww1">Hãy bỏ vài giây...”</p>
-                  <p class="wwww1">...Đọc hết câu này</p>
-                  <p class="wwww1">Đọc tới đây</p>
-                  <p class="wwww1">Thì cũng...</p>
-                  <p class="wwww1">...Mất vài giây rồi</p>
-                  <p class="wwww1">Cảm ơn em!</p>
-				          <!-- <p class="wwww1" style="display:none;">你想要的，我能给的，我都会给你。</p> -->
-              </div>
-              <div class="ly-imgbox61">
-                <img class="ly-img61" src="./img/7.jpg">
-              </div>
-          </div>
-          <div class="ly-triangle23"></div>
-      </div>
-
-      <!--第七屏-->
-      <div class="section">
-          <div class="timeline"></div>
-          <div class="timepoint71"></div>
-          <div class="ly-box21 xx71">
-              <div class="ly-txt21">
-                Ngẫm
-              </div>
-              <div class="ly-txt22">
-                <p>Em đừng nghĩ mình là con gái xấu xí,mà hãy nghĩ tích cực vì em có đẹp đâu! </p>
-              </div>
-              <div class="ly-imgbox21">
-                <img class="ly-img21" src="./img/19.jpg">
-              </div>
-          </div>
-          <div class="ly-triangle21 xx72"></div>
-
-          <div class="ly-box71">
-              <div class="ly-txt23">
-                01/03/2004
-              </div>
-              <div class="ly-txt71">
-                <p>Em hợp áo evisua có hình đại bàng...</p>
-                <p>...Thêm cái qần cụt hình con rồng</p>
-                <p>Chạy chiếc xe wave độ bô nổ đùn đùn...</p>
-                <p>...Nhìn em rất ngầu!</p>
-                
-              </div>
-              <div class="ly-imgbox71">
-                <img class="ly-img71" src="./img/8.jpg">
-              </div>
-          </div>
-          <div class="ly-triangle22"></div>
-
-           <div class="ly-box72">
-              <div class="ly-txt25">
-                01/03/2004
-              </div>
-              <div class="ly-txt72">
-                <p>Vấp ngã không phải là thất bại!</p>
-                <p>Mà là...vấp ngã nên té. </p>
-              </div>
-              <div class="ly-imgbox72">
-                <img class="ly-img72" src="./img/9.jpg">
-              </div>
-          </div>
-          <div class="ly-triangle71"></div>
-
-          <div class="ly-box73">
-              <div class="ly-txt25">
-                 01/03/2004
-              </div>
-              <div class="ly-txt73">
-                <p>Nón đẹp, áo đẹp, khẩu trang đẹp nữa,em rất đẹp khi đeo khẩu trang!
-                </p>
-              </div>
-              <div class="ly-imgbox73">
-                <img class="ly-img73" src="./img/11.jpg">
-              </div>
-          </div>
-          <div class="ly-triangle72"></div>
-      </div>
-
-      <!--第八屏-->
-
-      <div class="section">
-          <div class="timeline"></div>
-          <div class="timepoint11"></div>
-          <div class="ly-box81">
-              <div class="ly-txt11">
-                01/03/2004
-              </div>
-              <div class="ly-txt82">
-                <p>Thật ra anh rất thích em,
-                  Anh thích em từ cái nhìn đầu tiên,
-                  Anh không biết mua quà gì tặng em,
-                  thương em gái 4 tuổi của anh! 
-                </p>
-
-              </div>
-              <div class="ly-imgbox81">
-                <img class="ly-img81" src="./img/12.jpg">
-              </div>
-          </div>
-          <div class="ly-triangle11"></div>
-
-          <div class="ly-box82">
-              <div class="ly-txt13">
-                01/03/2004
-              </div>
-              <div class="ly-txt84">
-                <p class="wwww1">Em phải nhớ 5 điều này!</p>
-                <p class="wwww1"> yêu tổ quốc yêu đồng bào,</p>
-                                 <p class="wwww1">học tập tốt lao động tốt,</p>
-                                     <p class="wwww1"> đoàn kết tốt kỷ luật tốt, </p>
-                                 <p class="wwww1"> giữ gìn vệ sinh thật tốt,</p>
-                                 <p class="wwww1">khiêm tốn thật thà dũng cảm!</p>
-              </div>
-          </div>
-          <div class="ly-triangle82"></div>
-      </div>
-
-      <!--第九屏-->
-
-<div class="section">
-          <div class="timeline"></div>
-          <div class="timepoint91"></div>
-          <div class="ly-box21 xx91">
-              <div class="ly-txt21">
-                01/03/2004
-              </div>
-              <div class="ly-txt90">
-                 <p>Chúc mừng sinh nhật của em Nguyễn Thư</p>
-              
-              </div>
-              <div class="ly-imgbox21 xx94">
-                <img class="ly-img21" src="./img/13.jpg">
-              </div>
-          </div>
-          <div class="ly-triangle21 xx92"></div>
-
-          <div class="ly-box91">
-              <div class="ly-txt23">
-                01/03/2004
-              </div>
-              <div class="ly-txt91">
-                  <p>Em xinh là một lợi thế</p>
-                  <p>Ế là một kỹ năng</p>
-                  <p>Em không có lợi thế,bù lại em có kỹ năng:3</p>
-              </div>
-              <div class="ly-imgbox91">
-                <img class="ly-img91" src="./img/14.jpg">
-              </div>
-          </div>
-          <div class="ly-triangle22 xx92"></div>
-
-           <div class="ly-box92">
-              <div class="ly-txt25">
-                01/03/2004
-              </div>
-              <div class="ly-txt92">
-                  <p>Nếu em xấu đừng sợ</p>
-                  <p>Hãy nhìn vào gương</p>
-                  <p>Dũng cảm đối mặt </p>
-                  <p>Nhìn từ từ...rồi cũng quen thôi!</p>
-              </div>
-              <div class="ly-imgbox92">
-                <img class="ly-img92" src="./img/15.jpg">
-              </div>
-          </div>
-          <div class="ly-triangle91"></div>
-
-          <div class="ly-box93">
-              <div class="ly-txt25">
-                01/03/2004
-              </div>
-              <div class="ly-txt93">
-                <p>Thật tuyệt vời được gặp nhau và biết nhau!</p>
-               
-              </div>
-              <div class="ly-imgbox93">
-                <img class="ly-img93" src="./img/16.jpg">
-              </div>
-          </div>
-          <div class="ly-triangle92"></div>
-      </div>
-		<!--第十屏-->
-
+  </div>
 		      <div class="section">
           <div class="timeline"></div>
           <div class="timepoint11"></div>
           <div class="ly-box81">
               <div class="ly-txt11">
-                Happy birthday
+                Giáng sinh vui vẻ
               </div>
               <div class="ly-txt82" style="top:8%">
-                  <p class="wwww1">Nguyễn Thị Anh Thư</p>
-                  <p class="wwww1">01/03/2004</p>
+                  <p class="wwww1">Nhan Bảo Như</p>
+                  <p class="wwww1">07/06/2006</p>
                 
               </div>
               <div class="ly-imgbox81">
-                <img class="ly-img81" src="./img/17.jpg">
+                <img class="ly-img81" src="./img/n5.jpg" style="">
               </div>
           </div>
           <div class="ly-triangle11"></div>
 
           <div class="ly-box82">
               <div class="ly-txt13">
-                01/03/2004
+                07/06/2006 ❤
               </div>
               <div class="ly-txt84">
-                 <p>Anh đã hi sinh nhan sắc xinh đẹp chà bá này để làm món quá nhỏ này tặng em,anh không đi dạo cũng vì anh bỏ một chúc thời gian đó vào món quà này, anh sợ làm không kịp tới ngày sinh nhật để tặng cho em, thông cảm cho anh nhé, những câu nói trên nếu làm em buồn thì em đừng buồn nhé vì nó thật vậy mà!, dởn đó đừng buồn mà. À anh có biết em thích nhạc Sơn Tùng được gọi là chồng yêu của em, nên anh có gắn vài bản nhạc, anh không biết trên trình duyệt ios có hỗ trợ tự phát nhạc hay không, anh mong là có để em nghe được nó, à anh chúc em một ngày sinh nhật vui vẻ!</p>
-             
+                 <p>Như ơi! Cảm ơn bé đã cho anh cơ hội được tìm hiểu về bé, Bé rất dễ thương vui tính vài lần anh gặp bé anh thích được nhìn bé cười điều mà anh thấy vui anh muốn được làm bờ vai cho bé, anh đang cố gắng làm mối quan hệ anh và bé tốt hơn, Những điều anh dành cho bé không nhiều nhưng đó là hiện tại của anh dành cho bé, dù mình có kết quả như nào nhưng anh vẫn vui vì bé cho anh cơ hội và ở bên với bé thời gian qua...anh yêu bé.</p>
+      
+                    <a href="../../../indexcopy.html" style="    padding: 10px;
+                    background: #E91E63;
+                    color: #ffffff;
+                    text-decoration: none;
+                    font-weight: 800;
+                    font-size: 17px;
+                    border-radius: 6px;">Bé nhấn vào đây ❤ </a>
               </div>
           </div>
           <div class="ly-triangle82"></div>
